@@ -37,6 +37,9 @@ namespace Ragil.AIS.Controllers
 
         public ActionResult Dua()
         {
+
+
+
             return View();
         }
 

@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Dua";
+}
+
+<h2>Dua</h2>
+
+Input value comma separated
+<input value="1,-1,3,-4,5,-2,7,4,2" id="inputData" />
+<br />
+<button id="btnSubmit">Submit</button>
+<br />
+Result : <span id="result"></span>
+
+
+
+
+
+
+@section scripts {
+    
+    <script>
+        $('#btnSubmit').click(function () {
+
+            var data = $('#inputData').val().split(',');
+
+            data = absArray(data);
+            //console.log(getPair(data));
+            $('#result').html(getPair(data).join(','));
+        });
+
+        var absArray = (array) => {
+
+            return array.map(Math.abs).sort();
+        }
+
+        function getPair(array) {
+            var pairArray = [];
+
+            for (var i = 0; i < array.length; i++) {
+
+                var count = 0;
+
+                for (var j = 0; j < array.length; j++) {
+
+                    if (array[j] == array[i]) {
+				        count++;
+			        }
+                }
+                if (count >= 2 && !pairArray.includes(array[i])) {
+
+                    pairArray.push(array[i]);
+
+		        }
+	        }
+            return pairArray;
+        }
+
+
+    </script>
+    
+    }

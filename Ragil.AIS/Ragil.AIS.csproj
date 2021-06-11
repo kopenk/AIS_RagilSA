@@ -162,6 +162,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Satu.cshtml" />
+    <Content Include="Views\Home\Dua.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
