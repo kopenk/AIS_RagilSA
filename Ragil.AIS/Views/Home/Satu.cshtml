@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ProductsVM>
+
+@{
+    ViewBag.Title = "Satu";
+}
+
+<h2>Satu</h2>
+
+
+<div class="table table-responsive">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <td>barcode</td>
+                <td>jumlah</td>
+                <td>total harga</td>
+                <td>ready</td>
+                <td>onhold</td>
+                <td>delivered</td>
+                <td>packing</td>
+                <td>sent</td>
+            </tr>
+
+        </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                <tr>
+                    <td>@product.barcode</td>
+                    <td>@product.totalQty</td>
+                    <td>@product.totalPrice.ToString("N2")</td>
+                    <td>@product.ready</td>
+                    <td>@product.onhold</td>
+                    <td>@product.delivered</td>
+                    <td>@product.packing</td>
+                    <td>@product.sent</td>
+                </tr>
+
+                }
+            </tbody>
+    </table>
+</div>
